@@ -105,7 +105,7 @@ func validateInput(input *Input) error {
 }
 
 func getFileContent(input *Input) (*GitHubFileResponse, error) {
-	url := fmt.Sprintf("https://api.github.com/repos%s/contents/%s?ref=%s",
+	url := fmt.Sprintf("https://api.github.com/repos/%s/contents/%s?ref=%s",
 		input.Repository, input.ValuesFile, input.Branch)
 
 	req, err := http.NewRequest("GET", url, nil)
@@ -136,7 +136,7 @@ func getFileContent(input *Input) (*GitHubFileResponse, error) {
 }
 
 func updateFile(input *Input, fileResp *GitHubFileResponse, newContent string) error {
-	url := fmt.Sprintf("https://api.github.com/repos%s/contents/%s",
+	url := fmt.Sprintf("https://api.github.com/repos/%s/contents/%s",
 		input.Repository, input.ValuesFile)
 
 	if input.CommitMessage == "" {
