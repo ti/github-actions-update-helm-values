@@ -1,0 +1,33 @@
+name: 'YAML Version Updater'
+description: 'Updates version value in a YAML file within a GitHub repository'
+inputs:
+  repository:
+    description: 'The GitHub repository path'
+    required: true
+  github_token:
+    description: 'GitHub token with repository write permissions'
+    required: true
+  branch:
+    description: 'The branch to modify'
+    required: false
+    default: 'main'
+  values_file:
+    description: 'Path to the YAML file within the repository'
+    required: false
+    default: 'app/values/values.beta.yaml'
+  version_key:
+    description: 'The key within the YAML file to update'
+    required: false
+    default: 'version'
+  version:
+    description: 'The new version value to set'
+    required: true
+  commit_message:
+    description: 'The commit message for the changes'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'edit'
+  color: 'blue'
