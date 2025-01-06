@@ -21,7 +21,7 @@ func main() {
 		ValuesFile:    getInput("values_file", "app/values/values.beta.yaml"),
 		VersionKey:    getInput("version_key", "version"),
 		Version:       getInput("version", ""),
-		CommitMessage: getInput("commit_message", "update version"),
+		CommitMessage: getInput("commit_message", ""),
 	}
 
 	// Validate inputs

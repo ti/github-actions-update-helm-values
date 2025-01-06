@@ -74,10 +74,10 @@ jobs:
    docker run --rm \
      -e INPUT_REPOSITORY \
      -e INPUT_GITHUB_TOKEN \
+     -e INPUT_VERSION \
      -e INPUT_BRANCH \
      -e INPUT_VALUES_FILE \
      -e INPUT_VERSION_KEY \
-     -e INPUT_COMMIT_MESSAGE \
      updater
    ```
 
