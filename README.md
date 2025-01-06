@@ -44,7 +44,7 @@ jobs:
           version: ${{ github.event.inputs.version }}
           branch: main
           values_file: app/values/values.beta.yaml
-          version_key: version
+          version_key: service.image.tag
 ```
 
 ## Testing Locally
