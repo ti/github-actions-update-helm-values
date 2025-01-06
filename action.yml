@@ -1,4 +1,4 @@
-name: 'YAML Version Updater'
+name: 'HELM Values Version Updater'
 description: 'Updates version value in a YAML file within a GitHub repository'
 inputs:
   repository:
