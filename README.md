@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update HELM Version
-        uses: ti/github-actions-update-helm-values@v1
+        uses: ti/github-actions-update-helm-values@v1.0.0
         with:
           repository: your-org/your-repo
           github_token: ${{ secrets.GITHUB_TOKEN }}
