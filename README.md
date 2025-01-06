@@ -40,7 +40,7 @@ jobs:
         uses: ti/github-actions-update-helm-values@v1.0.0
         with:
           repository: your-org/your-repo
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.HELM_GITHUB_TOKEN }}
           version: ${{ github.event.inputs.version }}
           branch: main
           values_file: app/values/values.beta.yaml
