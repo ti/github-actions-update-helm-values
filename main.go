@@ -4,7 +4,7 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"os"
 	"regexp"
@@ -123,7 +123,7 @@ func getFileContent(input *Input) (*GitHubFileResponse, error) {
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		body, _ := ioutil.ReadAll(resp.Body)
+		body, _ := io.ReadAll(resp.Body)
 		return nil, fmt.Errorf("failed to get file (status %d): %s", resp.StatusCode, string(body))
 	}
 
@@ -171,7 +171,7 @@ func updateFile(input *Input, fileResp *GitHubFileResponse, newContent string) e
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		body, _ := ioutil.ReadAll(resp.Body)
+		body, _ := io.ReadAll(resp.Body)
 		return fmt.Errorf("failed to update file (status %d): %s", resp.StatusCode, string(body))
 	}
 
