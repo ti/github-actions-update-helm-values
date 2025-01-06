@@ -36,8 +36,8 @@ jobs:
   update-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Update YAML Version
-        uses: your-username/yaml-version-updater@v1
+      - name: Update HELM Version
+        uses: ti/github-actions-update-helm-values@v1@v1
         with:
           repository: /your-org/your-repo
           github_token: ${{ secrets.GITHUB_TOKEN }}
